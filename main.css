@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+body {
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.ts-wrap {
+  flex-grow: 1;
+}
+
+.ts-wrap-2 {
+  position: relative;
+}
+
+.transcript {
+  margin: 0 auto;
+  color: #fff;
+  background-color: #000;
+  font-family: monospace;
+  font-size: 4em;
+  line-height: 1.2em;
+  padding: 0.25em;
+  width: 100%;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  letter-spacing: 0em;
+  align-items: flex-start;
+}
+
+.scrollable {
+  display: block;
+  overflow-y: scroll;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.scrollable-child {
+  position: absolute;
+  bottom: 0;
+  max-height: 100%;
+  min-width: 5px;
+}
+
+.spacer {
+  display: block;
+  width: 100%;
+}
+
+nav {
+  background-color: #222;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
+
+nav h1 {
+  display: inline-block;
+  margin-right: auto;
+  font-size: 1.1em;
+}
+
+#toggle_captioning {
+  font-size: 1rem;
+  user-select: none;
+  padding: 0.75rem;
+}
+
+#mic_name {
+  vertical-align: middle;
+  color: #f88;
+  margin-right: 1rem;
+  display: inline-block;
+  height: 1rem;
+}
+
+#mic_indicator {
+  margin-right: 0.25em;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #f88;
+  animation: 2s ease 0s infinite alternate mic_light;
+}
+
+@keyframes mic_light {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.4;
+  }
+}

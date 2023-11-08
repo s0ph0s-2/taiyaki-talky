@@ -1,0 +1,30 @@
+{
+  "name": "tayaki-talky",
+  "version": "1.0.0",
+  "description": "Very simple client-side webapp for using Web Speech to implement machine captioning",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build && ./make-redbean.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s0ph0s-2/tayaki-talky.git"
+  },
+  "keywords": [
+    "accessibility"
+  ],
+  "author": "s0ph0s <awoo@s0ph0s.dog>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s0ph0s-2/tayaki-talky/issues"
+  },
+  "homepage": "https://github.com/s0ph0s-2/tayaki-talky#readme",
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "3.0.3",
+    "vite": "^5.0.0-beta.16"
+  }
+}

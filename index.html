@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tayaki-Talky</title>
+    <link rel="stylesheet" href="main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="flex">
+    <div class="flex ts-wrap">
+      <div class="flex ts-wrap ts-wrap-2">
+        <div id="transcript" class="flex transcript">
+          <span id="scroller" class="scrollable">
+            <div class="scrollable-child">
+              <span class="spacer"></span>
+              <span id="final"></span>
+              <span id="interim"></span>
+              <span id="end_of_transcript_anchor"></span>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+    <nav class="flex">
+      <h1>🐟 Tayaki-Talky</h1>
+      <span class="flex">
+        <span id="mic_indicator"></span>
+        <span id="mic_name"></span>
+      </span>
+      <button id="toggle_captioning">Start Captioning</button>
+    </nav>
+    <script type="module" src="tt.js"></script>
+  </body>
+</html>
