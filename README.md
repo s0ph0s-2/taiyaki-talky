@@ -1,4 +1,4 @@
-# Tayaki-Talky
+# Taiyaki-Talky
 
 A drop-dead simple reimplementation of the core functionality of https://github.com/curtgrimes/webcaptioner.
 
@@ -25,7 +25,7 @@ At last count, this transfers 9.5 KB to the client, loads in 52 ms, and gets a p
 
 ## Why is it called that?
 
-When I wrote this, I had [Tayaki](https://en.wikipedia.org/wiki/Taiyaki) on the brain (I was hungry for dessert). At least in my dialect of English, the name "Tayaki-Talky" has a pleasant repetitiveness to it. Also, because it is meant to be served by the [Redbean](https://justine.lol/redbean) web server, it's extra fitting! Also, Tayaki-Talky is a much nicer name than "Paste."
+When I wrote this, I had [Taiyaki](https://en.wikipedia.org/wiki/Taiyaki) on the brain (I was hungry for dessert). At least in my dialect of English, the name "Taiyaki-Talky" has a pleasant repetitiveness to it. Also, because it is meant to be served by the [Redbean](https://justine.lol/redbean) web server, it's extra fitting! Also, Taiyaki-Talky is a much nicer name than "Paste."
 
 ## Why are you bolting some weird web server onto this?
 

@@ -1,5 +1,5 @@
 {
-  "name": "tayaki-talky",
+  "name": "taiyaki-talky",
   "version": "1.0.0",
   "description": "Very simple client-side webapp for using Web Speech to implement machine captioning",
   "type": "commonjs",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/s0ph0s-2/tayaki-talky.git"
+    "url": "git+https://github.com/s0ph0s-2/taiyaki-talky.git"
   },
   "keywords": [
     "accessibility"
@@ -18,9 +18,9 @@
   "author": "s0ph0s <awoo@s0ph0s.dog>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/s0ph0s-2/tayaki-talky/issues"
+    "url": "https://github.com/s0ph0s-2/taiyaki-talky/issues"
   },
-  "homepage": "https://github.com/s0ph0s-2/tayaki-talky#readme",
+  "homepage": "https://github.com/s0ph0s-2/taiyaki-talky#readme",
   "devDependencies": {
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
