@@ -5,7 +5,7 @@ A drop-dead simple reimplementation of the core functionality of https://github.
 ## Usage
 
 1. Clone this repo
-2. Download a copy of [Redbean with at least Lua support](https://justine.lol/redbean) and put it in the repository folder
+2. Download any copy of [Redbean](https://justine.lol/redbean) (only tested with 2.2 and above) and put it in the repository folder
 3. Ensure that your copy of Redbean is named `redbean.com`
 4. Do you want to serve minified source files?
    - If yes, run `npm ci && npm run build`
