@@ -1,0 +1,24 @@
+{
+  "id": "dog.s0ph0s.taiyaki-talky",
+  "name": "Taiyaki-Talky",
+  "short_name": "TT",
+  "description": "Use the Web Speech API to display captions for what is being spoken aloud.",
+  "start_url": "http://localhost:8080/",
+  "icons": [
+    {
+      "src": "http://localhost:8080/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "http://localhost:8080/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#327da8"
+}

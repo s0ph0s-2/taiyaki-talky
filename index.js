@@ -1,5 +1,19 @@
 "use strict";
 
+// Only register the service worker if they're supported.
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js").then(
+    (registration) => {
+      console.log("Service worker registration successful:", registration);
+    },
+    (error) => {
+      console.error(`Service worker registration failed: ${error}`);
+    },
+  );
+} else {
+  console.error("Service workers are not supported.");
+}
+
 /* global webkitSpeechRecognition */
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var state = 0;
@@ -10,6 +24,7 @@ var alreadyInsertedLineBreakThisSilence = false;
 var isScrolledNearToEnd = true;
 // The SpeechRecognizer will stop automatically if it hears nothing for some period of time.  This tracks whether we're supposed to be captioning, so that it can be automatically restarted.
 var captioningEnabled = false;
+var transcript = "";
 
 const main_toggle = document.getElementById("toggle_captioning");
 const interim = document.getElementById("interim");
@@ -48,20 +63,22 @@ main_toggle.onclick = (_event) => {
 };
 
 function set_transcript_interim(text) {
-  interim.textContent = text;
+  interim.innerText = text;
 }
 
 function clear_transcript_interim() {
-  interim.textContent = "";
+  interim.innerText = "";
 }
 
 function append_transcript_final(text) {
-  final.textContent = final.textContent + text;
+  transcript = transcript + text;
+  final.innerText = transcript;
 }
 
 function scroll_transcript_to_end() {
   end_anchor.scrollIntoView({
-    behavior: document.hidden ? "auto" : "smooth",
+    behavior: "instant",
+    // behavior: document.hidden ? "auto" : "smooth",
   });
 }
 
@@ -92,11 +109,12 @@ function start_captioning() {
             return;
           }
         }
-        mic_label.textContent = "(did you grant mic permissions?)";
+        mic_label.textContent = "Did you grant mic permissions?";
       });
   }
   const micPermsTimeout = setTimeout(() => {
     console.log("User probably hasn't granted mic permissions");
+    mic_label.textContent = "Did you grant mic permissions?";
   }, 200);
   speechRecognizer.onstart = () => {
     clearTimeout(micPermsTimeout);
@@ -115,6 +133,9 @@ function start_captioning() {
           if (isScrolledNearToEnd) {
             scroll_transcript_to_end();
           }
+        }
+        if (lastUpdated && msSinceLastResult >= 30 * 1000) {
+          speechRecognizer.stop();
         }
       }, 750);
     }
@@ -148,6 +169,7 @@ function start_captioning() {
     console.log("speech recognition ended");
     clearInterval(lineBreakWatcher);
     lineBreakWatcher = null;
+    lastUpdated = null;
     if (captioningEnabled) {
       console.log("automatically restarting");
       start_captioning();
